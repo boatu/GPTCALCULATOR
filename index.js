@@ -1,3 +1,23 @@
+function handleKeyPress(event) {
+    var key = event.key;
+    var display = document.getElementById('display');
+
+    if (event.keyCode === 13) {
+        // Handle Enter key
+        calculateResult();
+    } else if (event.keyCode === 8) {
+        // Handle Backspace key
+        deleteCharacter();
+    } else if (event.keyCode === 27) {
+        // Handle Escape key
+        clearDisplay();
+    } else {
+        // Handle other key presses
+        appendCharacter(key);
+    }
+}
+
+// Rest of the code remains the same
 function appendCharacter(char) {
     document.getElementById('display').value += char;
 }
